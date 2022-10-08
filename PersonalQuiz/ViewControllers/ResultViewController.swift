@@ -18,7 +18,6 @@ class ResultViewController: UIViewController {
         navigationItem.hidesBackButton = true
         resultLabel.text = "Вы - \(getResult().rawValue)"
         resultSublabel.text = getResult().definition
-        
     }
 
     @IBAction func doneButtonPressed(_ sender: UIBarButtonItem) {

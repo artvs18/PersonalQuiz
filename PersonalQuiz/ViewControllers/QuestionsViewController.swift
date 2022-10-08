@@ -76,24 +76,18 @@ class QuestionsViewController: UIViewController {
 // MARK: - Private Methods
 extension QuestionsViewController {
     private func updateUI() {
-        // Hide everything
         for stackView in [singleStackView, multipleStackView, rangedStackView] {
             stackView?.isHidden = true
         }
         
-        // Get current question
         let currentQuestion = questions[questionIndex]
         
-        // Set current question for question label
         questionLabel.text = currentQuestion.title
         
-        // Calculate progress
         let totalProgress = Float(questionIndex) / Float(questions.count)
         
-        // Set progress for questionProgressView
         questionProgressView.setProgress(totalProgress, animated: true)
         
-        // Set navigation title
         title = "Вопрос № \(questionIndex + 1) из \(questions.count)"
         
         showCurrentAnswers(for: currentQuestion.responseType)
